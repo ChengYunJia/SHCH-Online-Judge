@@ -1,3 +1,4 @@
+//solving color problem with a conventional dynamic-programimg way
 #include<bits/stdc++.h>
 using namespace std;
 
