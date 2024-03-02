@@ -28,18 +28,15 @@ MM matrix_mat(MM x,MM y)
     return result;
 }
 
-
-int a = 0;
 //exponentiating by squaring but matrix version
 MM MatrixPow(MM x, long long y)
 {
     MM result = IM, tmp = x;
-    for( ; y ; y >>= 1, tmp = matrix_mat(tmp,tmp), a++)
+    for( ; y ; y >>= 1, tmp = matrix_mat(tmp,tmp))
     {
         if( y & 1 )
         {
             result = matrix_mat(result,tmp) ;
-            a++;
         }
     }
     return result;
@@ -63,7 +60,7 @@ int main()
 
     start = matrix_mat( MatrixPow(transformation,N-1) , start );
     int ans = start[0][0] + start[1][0] + start[2][0];
-    cout << ans <<' '<< a << endl;
+    cout << ans << endl;
 
 
     return 0;
